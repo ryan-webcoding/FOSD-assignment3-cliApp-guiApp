@@ -1,0 +1,5 @@
+How to Run the Application
+
+1. Clone the repository to your local machine.
+2. Navigate to the parent directory of the project in your terminal.
+3. Run the application as a module using the following command: python -m cliApp.app
