@@ -10,8 +10,8 @@ class LoginWindow(tk.Tk):
 
         self.title("login")
         self.geometry("820x500")
-        self.resizable(False, False)
-        self.configure(padx=28, pady=28)
+        self.resizable(False, False)# x and y resizing disabled
+        self.configure(padx=28, pady=28)# add outer padding inside window around everything
 
         # Exit button (top-left)
         ttk.Button(self, text="← exit", command=self._exit_app).grid(row=0, column=0, sticky="w")

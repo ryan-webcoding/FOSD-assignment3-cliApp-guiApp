@@ -11,6 +11,7 @@ def student_register(depth: int) -> None:
     while True:
         email = ask(depth, "Email: ")
         password = ask(depth, "Password: ")
+        # check email and password format first
         if not (valid_email(email) and valid_password(password)):
             say(depth, "Incorrect email or password format", C_RED)
             continue

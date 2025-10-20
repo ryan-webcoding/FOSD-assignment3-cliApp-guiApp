@@ -5,6 +5,7 @@ from ..core.db import Database
 from ..core.util import gen_subject_id
 
 def enrol_subject(depth: int, stu: Student) -> None:
+    # first checking if the student can still enroll in subjects
     if not stu.can_enrol_more():
         say(depth, "Students are allowed to enrol in 4 subjects only", C_RED)
         return

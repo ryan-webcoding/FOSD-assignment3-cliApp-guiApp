@@ -8,5 +8,5 @@ if __name__ == "__main__":
     try:
         university_menu()
     except KeyboardInterrupt:
-        print()
+        print(x)
         say(0, "Thank You", C_YELLOW)

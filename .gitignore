@@ -1,0 +1,8 @@
+# Ignore all __pycache__ folders and their contents
+__pycache__/
+
+# Alternatively (more robust, ignores any nested __pycache__ folders)
+**/__pycache__/
+
+# Ignore the students.data file anywhere in the repo
+students.data

@@ -1,6 +1,6 @@
 from typing import Optional
 
-RESET   = "\033[0m"
+RESET   = "\033[0m" # normal text color
 C_SKY   = "\033[96m"  # bright cyan
 C_YELLOW= "\033[93m"
 C_RED   = "\033[91m"
@@ -13,6 +13,7 @@ SUBMENU_STEP = 4
 def colour(text: str, c: str) -> str:
     return f"{c}{text}{RESET}"
 
+# indentation, take integer as depth, return indentation, which is made of empty spaces
 def indent_str(depth: int) -> str:
     return "  " * depth  # two spaces per level
 
