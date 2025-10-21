@@ -8,8 +8,8 @@ class SubjectPopup(tk.Toplevel):
         self.resizable(False, False)
         self.configure(padx=24, pady=24)
 
-        self.transient(parent)
-        self.grab_set()
+        self.transient(parent)# so that the pop up always stays on top of enrolment window
+        self.grab_set()# so that user must interact or close this pop up before interacting with the enrolment window
 
         subj_id = subject.get("id")
         title = ttk.Label(self, text=f"subject-{subj_id}", font=("Arial", 22, "bold"))

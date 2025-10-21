@@ -63,7 +63,7 @@ class LoginWindow(tk.Tk):
                 self._popup_error("Unknown error")
             return
 
-        # success → open enrolment and hide login
+        # success → open enrolment and hide login window
         self.withdraw()
         self.enrol_window = EnrolmentWindow(self, self.db, email, on_back=self._back_from_enrolment)
 

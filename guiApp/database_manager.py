@@ -30,13 +30,13 @@ class DatabaseManager:
 
     def __init__(self, data_path: Optional[str] = None):
         # Default: <project_root>/students.data, where project_root is the parent of guiApp/
-        pkg_dir = os.path.dirname(os.path.abspath(__file__))   # guiApp/
-        project_root = os.path.dirname(pkg_dir)                # parent of guiApp/
-        self.path = data_path or os.path.join(project_root, "students.data") # the absolute path of the datafile
+        pkg_dir = os.path.dirname(os.path.abspath(__file__))   # find the folder where database_manager.py is at
+        project_root = os.path.dirname(pkg_dir)                # go one level up to the main project folder
+        self.path = data_path or os.path.join(project_root, "students.data") # if user provided a path, use that, other wise use project_root to store "students.data"
         self._ensure_file()
 
     # ----------------------------- public API -----------------------------
-
+    # user would login 
     def authenticate(self, email: str, password: str) -> Tuple[bool, str]:
         """
         Returns (ok, code). Codes: "empty" | "no_such_student" | "bad_password" | "" (success)
@@ -83,7 +83,7 @@ class DatabaseManager:
         Limit: 4 subjects per student (raises ValueError("limit_reached")).
         """
         student = self.get_student(email)
-        subjects: List[Dict] = student.setdefault("subjects", [])
+        subjects: List[Dict] = student.setdefault("subjects", []) #if there are subject list already, return it; otherwise create an empty list
         if len(subjects) >= 4:
             raise ValueError("limit_reached")
 

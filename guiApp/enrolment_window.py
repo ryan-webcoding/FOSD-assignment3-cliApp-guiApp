@@ -24,7 +24,7 @@ class EnrolmentWindow(tk.Toplevel):
         ttk.Button(self, text="enrol", command=self._enrol_one, width=18).grid(row=2, column=1, pady=(8, 0))
 
         self._refresh_list()
-        self.protocol("WM_DELETE_WINDOW", self._back)
+        self.protocol("WM_DELETE_WINDOW", self._back) # upon clicking the "X" button, call self.back()
 
     def _back(self):
         self.destroy()
